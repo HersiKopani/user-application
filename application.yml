@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: bank-authentication
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bank-transaction
+    username: postgres
+    password: adminHersi
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8081
+  servlet:
+    context-path: /bank-authentication
+logging:
+  level:
+    root: INFO
+    io.github.jhipster: INFO
+    org.springframework.cloud: INFO
+  file: '/Users/Hersi Kopani/bank-authentication/logs/app.log'
+  pattern:
+    console: '%d{dd-MM-yyyy HH:mm:ss.SSS},${spring.application.name},%X{version:-},${PID:- },[%thread],%-5level,%c{1},%X{correlation-id:-},%X{traceId:-},%X{spanId:-},%X{parentId:-},%X{X-Span-Name:-},%X{X-User-Session-Id:-},%X{sampled:-},%X{schemaNamespace:-},%X{messageTypeName:-},%X{schemaName:-},%X{schemaVersion:-},%m%n'
+    file: '%d{dd-MM-yyyy HH:mm:ss.SSS},${spring.application.name},%X{version:-},Using,${PID:- },[%thread],%-5level,%c{1},%X{correlation-id:-},%X{traceId:-},%X{spanId:-},%X{parentId:-},%X{X-Span-Name:-},%X{X-User-Session-Id:-},%X{sampled:-},%X{schemaNamespace:-},%X{messageTypeName:-},%X{schemaName:-},%X{schemaVersion:-},%m%n'
+
+security:
+  jwt:
+    key: 357638792F423F4428472B4B6250655368566D597133743677397A2443264629
+    expiresIn: 3600000
